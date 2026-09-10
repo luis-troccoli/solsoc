@@ -1,5 +1,3 @@
-# 🛡️ SolSOC
-
 <p align="center">
   <img src="assets/solsoc-logo.jpg" alt="SolSOC logo"/>
 </p>

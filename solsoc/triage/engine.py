@@ -1,5 +1,13 @@
 from __future__ import annotations
-from rich.progress import Progress, SpinnerColumn, TextColumn, BarColumn, TaskProgressColumn
+
+from rich.progress import (
+    BarColumn,
+    Progress,
+    SpinnerColumn,
+    TaskProgressColumn,
+    TextColumn,
+)
+
 from solsoc.llm.base import LLMProvider
 from solsoc.triage.models import Alert, TriageReport, TriageResult
 

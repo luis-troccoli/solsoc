@@ -1,7 +1,8 @@
 from __future__ import annotations
+
 import sys
 from pathlib import Path
-from typing import Optional
+
 import typer
 from rich.console import Console
 
@@ -34,8 +35,8 @@ def _read_input(source: str) -> tuple[str, str | None]:
 
 def _run_output(report, format: str | None, output: str | None) -> None:
     """Shared output logic for triage and pull commands."""
-    from solsoc.output.rich_output import print_report
     from solsoc.output.json_output import print_json
+    from solsoc.output.rich_output import print_report
 
     use_html = (format == "html") or (output is not None and output.endswith(".html"))
     use_json = (format == "json") or (output is not None and not output.endswith(".html"))
@@ -64,17 +65,17 @@ def triage(
         "--provider", "-p",
         help="LLM provider to use: anthropic | openai | gemini",
     ),
-    format: Optional[str] = typer.Option(
+    format: str | None = typer.Option(
         None,
         "--format", "-f",
         help="Output format: table (default) | json | html",
     ),
-    output: Optional[str] = typer.Option(
+    output: str | None = typer.Option(
         None,
         "--output", "-o",
         help="Save output to this file path (.json or .html).",
     ),
-    input_format: Optional[str] = typer.Option(
+    input_format: str | None = typer.Option(
         None,
         "--input-format",
         help="Override auto-detection: json | csv",
@@ -95,8 +96,8 @@ def triage(
       cat alerts.json | solsoc triage - --provider gemini\n
       solsoc triage alerts.json --format html --output report.html
     """
-    from solsoc.parsers.auto import detect_and_parse
     from solsoc.config import get_provider
+    from solsoc.parsers.auto import detect_and_parse
     from solsoc.triage.engine import run_triage
 
     try:
@@ -154,30 +155,30 @@ def pull(
         help="Number of alerts to triage per batch (default: 10).",
         min=1,
     ),
-    format: Optional[str] = typer.Option(
+    format: str | None = typer.Option(
         None,
         "--format", "-f",
         help="Output format: table (default) | json | html",
     ),
-    output: Optional[str] = typer.Option(
+    output: str | None = typer.Option(
         None,
         "--output", "-o",
         help="Save output to this file path (.json or .html).",
     ),
     # Wazuh options
-    wazuh_url: Optional[str] = typer.Option(None, "--url", help="[Wazuh/Splunk] Base URL."),
-    wazuh_user: Optional[str] = typer.Option(None, "--username", help="[Wazuh/Splunk] Username."),
-    wazuh_password: Optional[str] = typer.Option(None, "--password", help="[Wazuh/Splunk] Password.", hide_input=True),
+    wazuh_url: str | None = typer.Option(None, "--url", help="[Wazuh/Splunk] Base URL."),
+    wazuh_user: str | None = typer.Option(None, "--username", help="[Wazuh/Splunk] Username."),
+    wazuh_password: str | None = typer.Option(None, "--password", help="[Wazuh/Splunk] Password.", hide_input=True),
     wazuh_no_verify: bool = typer.Option(False, "--no-verify-ssl", help="[Wazuh/Splunk] Skip SSL verification."),
     # Sentinel options
-    sentinel_sub: Optional[str] = typer.Option(None, "--subscription-id", help="[Sentinel] Azure subscription ID."),
-    sentinel_rg: Optional[str] = typer.Option(None, "--resource-group", help="[Sentinel] Resource group name."),
-    sentinel_ws: Optional[str] = typer.Option(None, "--workspace-name", help="[Sentinel] Log Analytics workspace name."),
-    sentinel_tenant: Optional[str] = typer.Option(None, "--tenant-id", help="[Sentinel] Azure tenant ID."),
-    sentinel_client: Optional[str] = typer.Option(None, "--client-id", help="[Sentinel] Service principal client ID."),
-    sentinel_secret: Optional[str] = typer.Option(None, "--client-secret", help="[Sentinel] Service principal secret.", hide_input=True),
+    sentinel_sub: str | None = typer.Option(None, "--subscription-id", help="[Sentinel] Azure subscription ID."),
+    sentinel_rg: str | None = typer.Option(None, "--resource-group", help="[Sentinel] Resource group name."),
+    sentinel_ws: str | None = typer.Option(None, "--workspace-name", help="[Sentinel] Log Analytics workspace name."),
+    sentinel_tenant: str | None = typer.Option(None, "--tenant-id", help="[Sentinel] Azure tenant ID."),
+    sentinel_client: str | None = typer.Option(None, "--client-id", help="[Sentinel] Service principal client ID."),
+    sentinel_secret: str | None = typer.Option(None, "--client-secret", help="[Sentinel] Service principal secret.", hide_input=True),
     # Splunk options
-    splunk_query: Optional[str] = typer.Option(None, "--query", "-q", help="[Splunk] SPL search query."),
+    splunk_query: str | None = typer.Option(None, "--query", "-q", help="[Splunk] SPL search query."),
 ) -> None:
     """
     Pull alerts directly from a SIEM, triage them, and report verdicts.
@@ -190,9 +191,9 @@ def pull(
     """
     from solsoc.config import (
         get_provider,
-        get_wazuh_integration,
         get_sentinel_integration,
         get_splunk_integration,
+        get_wazuh_integration,
     )
     from solsoc.triage.engine import run_triage
 

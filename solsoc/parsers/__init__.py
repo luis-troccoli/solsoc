@@ -1,5 +1,5 @@
 from solsoc.parsers.auto import detect_and_parse
-from solsoc.parsers.json_parser import JSONParser
 from solsoc.parsers.csv_parser import CSVParser
+from solsoc.parsers.json_parser import JSONParser
 
-__all__ = ["detect_and_parse", "JSONParser", "CSVParser"]
+__all__ = ["CSVParser", "JSONParser", "detect_and_parse"]

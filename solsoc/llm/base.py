@@ -1,5 +1,7 @@
 from __future__ import annotations
+
 from abc import ABC, abstractmethod
+
 from solsoc.triage.models import Alert, TriageResult
 
 

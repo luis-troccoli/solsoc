@@ -56,3 +56,9 @@ packages = ["solsoc"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+
+[tool.ruff.lint]
+ignore = ["BLE001", "TRY203", "TRY004"]

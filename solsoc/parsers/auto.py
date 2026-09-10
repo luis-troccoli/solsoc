@@ -1,7 +1,7 @@
 from __future__ import annotations
-from solsoc.parsers.base import BaseParser
-from solsoc.parsers.json_parser import JSONParser
+
 from solsoc.parsers.csv_parser import CSVParser
+from solsoc.parsers.json_parser import JSONParser
 from solsoc.triage.models import Alert
 
 

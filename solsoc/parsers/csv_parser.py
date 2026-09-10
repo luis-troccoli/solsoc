@@ -1,7 +1,9 @@
 from __future__ import annotations
+
 import csv
 import io
 import uuid
+
 from solsoc.parsers.base import BaseParser
 from solsoc.triage.models import Alert
 
@@ -17,7 +19,7 @@ _SRC_FIELDS = ("source", "source_system", "siem", "manager", "origin")
 def _find(row: dict, candidates: tuple) -> str | None:
     lower = {k.lower(): v for k, v in row.items()}
     for c in candidates:
-        if c in lower and lower[c]:
+        if lower.get(c):
             return lower[c]
     return None
 

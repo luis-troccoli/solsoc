@@ -1,6 +1,8 @@
 from __future__ import annotations
+
 import json
 import uuid
+
 from solsoc.parsers.base import BaseParser
 from solsoc.triage.models import Alert
 

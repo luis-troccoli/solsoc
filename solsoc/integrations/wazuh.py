@@ -1,7 +1,10 @@
 from __future__ import annotations
+
 import uuid
+
 import requests
 import urllib3
+
 from solsoc.integrations.base import SIEMIntegration
 from solsoc.triage.models import Alert
 
@@ -72,7 +75,7 @@ class WazuhIntegration(SIEMIntegration):
 
     def _normalize(self, item: dict) -> Alert:
         rule = item.get("rule", {})
-        agent = item.get("agent", {})
+        item.get("agent", {})
         manager = item.get("manager", {})
 
         alert_id = item.get("id") or str(uuid.uuid4())

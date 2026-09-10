@@ -1,4 +1,5 @@
 from __future__ import annotations
+
 from solsoc.llm.base import LLMProvider
 from solsoc.triage.models import Alert, TriageResult
 from solsoc.triage.prompt import SYSTEM_PROMPT, build_user_prompt

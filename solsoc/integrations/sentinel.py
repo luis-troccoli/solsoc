@@ -1,5 +1,7 @@
 from __future__ import annotations
+
 import uuid
+
 from solsoc.integrations.base import SIEMIntegration
 from solsoc.triage.models import Alert
 

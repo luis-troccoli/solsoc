@@ -1,4 +1,5 @@
 from __future__ import annotations
+
 from solsoc.triage.models import Alert
 
 SYSTEM_PROMPT = """You are an expert SOC (Security Operations Center) analyst with deep knowledge

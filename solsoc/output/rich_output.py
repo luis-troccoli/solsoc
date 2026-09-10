@@ -1,8 +1,10 @@
 from __future__ import annotations
+
+from rich import box
 from rich.console import Console
 from rich.table import Table
 from rich.text import Text
-from rich import box
+
 from solsoc.triage.models import TriageReport, TriageResult
 
 console = Console()

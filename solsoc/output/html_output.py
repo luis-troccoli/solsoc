@@ -1,7 +1,10 @@
 from __future__ import annotations
-from pathlib import Path
+
 from datetime import datetime, timezone
-from jinja2 import Environment, BaseLoader
+from pathlib import Path
+
+from jinja2 import BaseLoader, Environment
+
 from solsoc.triage.models import TriageReport
 
 _TEMPLATE = """<!DOCTYPE html>
