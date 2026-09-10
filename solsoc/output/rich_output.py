@@ -52,14 +52,14 @@ def print_report(report: TriageReport) -> None:
         header_style="bold blue",
         expand=True,
     )
-    table.add_column("ID", style="dim", max_width=16, no_wrap=True)
-    table.add_column("Alert", max_width=24)
-    table.add_column("Verdict", justify="center", min_width=14)
-    table.add_column("Severity", justify="center", min_width=12)
-    table.add_column("Confidence", justify="center", min_width=10)
-    table.add_column("MITRE", max_width=22, style="dim")
-    table.add_column("Reason", max_width=30)
-    table.add_column("Action", max_width=24)
+    table.add_column("ID", style="dim", min_width=14, no_wrap=True)
+    table.add_column("Alert", min_width=16, ratio=2)
+    table.add_column("Verdict", justify="center", min_width=14, no_wrap=True)
+    table.add_column("Severity", justify="center", min_width=12, no_wrap=True)
+    table.add_column("Confidence", justify="center", min_width=10, no_wrap=True)
+    table.add_column("MITRE", style="dim", min_width=16, ratio=2)
+    table.add_column("Reason", min_width=20, ratio=3)
+    table.add_column("Action", min_width=20, ratio=3)
 
     for r in report.results:
         _add_row(table, r)
