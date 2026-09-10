@@ -1,0 +1,62 @@
+{
+  "value": [
+    {
+      "SystemAlertId": "sentinel-a1b2c3d4-0001",
+      "AlertDisplayName": "Impossible travel activity",
+      "Severity": "Medium",
+      "TimeGenerated": "2026-09-10T04:00:00Z",
+      "Description": "User alice@contoso.com signed in from New York, USA and then from Moscow, Russia within 45 minutes — physically impossible travel time.",
+      "WorkspaceSubscriptionId": "sub-xxxx-yyyy",
+      "Entities": [
+        { "Type": "Account", "Name": "alice@contoso.com" },
+        { "Type": "IP", "Address": "185.220.101.10", "Location": "Moscow, RU" }
+      ]
+    },
+    {
+      "SystemAlertId": "sentinel-a1b2c3d4-0002",
+      "AlertDisplayName": "Privileged identity used outside PIM",
+      "Severity": "High",
+      "TimeGenerated": "2026-09-10T04:05:33Z",
+      "Description": "Global Administrator role used directly without activating through Privileged Identity Management (PIM). Account: bob@contoso.com.",
+      "WorkspaceSubscriptionId": "sub-xxxx-yyyy",
+      "Entities": [
+        { "Type": "Account", "Name": "bob@contoso.com" },
+        { "Type": "AzureResource", "ResourceId": "/subscriptions/sub-xxxx-yyyy" }
+      ]
+    },
+    {
+      "SystemAlertId": "sentinel-a1b2c3d4-0003",
+      "AlertDisplayName": "MFA disabled for user account",
+      "Severity": "High",
+      "TimeGenerated": "2026-09-10T04:09:10Z",
+      "Description": "Multi-factor authentication was disabled for user carol@contoso.com by admin dave@contoso.com.",
+      "WorkspaceSubscriptionId": "sub-xxxx-yyyy",
+      "Entities": [
+        { "Type": "Account", "Name": "carol@contoso.com" },
+        { "Type": "Account", "Name": "dave@contoso.com" }
+      ]
+    },
+    {
+      "SystemAlertId": "sentinel-a1b2c3d4-0004",
+      "AlertDisplayName": "Conditional Access policy modified",
+      "Severity": "Low",
+      "TimeGenerated": "2026-09-10T04:11:00Z",
+      "Description": "Conditional Access policy 'Require MFA for all users' was modified by admin eve@contoso.com. Change was pre-approved in change ticket #CHG-4421.",
+      "WorkspaceSubscriptionId": "sub-xxxx-yyyy",
+      "Entities": [
+        { "Type": "Account", "Name": "eve@contoso.com" }
+      ]
+    },
+    {
+      "SystemAlertId": "sentinel-a1b2c3d4-0005",
+      "AlertDisplayName": "Azure Key Vault secret accessed by unusual identity",
+      "Severity": "Medium",
+      "TimeGenerated": "2026-09-10T04:15:22Z",
+      "Description": "Key Vault 'kv-prod-secrets' secret 'db-connection-string' accessed by service principal 'sp-legacy-app' which has not accessed this vault in 90+ days.",
+      "WorkspaceSubscriptionId": "sub-xxxx-yyyy",
+      "Entities": [
+        { "Type": "AzureResource", "ResourceId": "/subscriptions/sub-xxxx-yyyy/resourceGroups/rg-prod/providers/Microsoft.KeyVault/vaults/kv-prod-secrets" }
+      ]
+    }
+  ]
+}

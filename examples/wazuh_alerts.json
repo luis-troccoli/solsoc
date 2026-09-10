@@ -1,0 +1,98 @@
+[
+  {
+    "id": "wazuh-1748392010.12345",
+    "agent": { "id": "003", "name": "web-server-01" },
+    "manager": { "name": "Wazuh" },
+    "rule": {
+      "id": "5710",
+      "name": "Multiple authentication failures",
+      "level": 10,
+      "description": "sshd: Multiple authentication failures."
+    },
+    "title": "Multiple authentication failures",
+    "description": "sshd: Multiple authentication failures. 15 attempts in 30 seconds from 203.0.113.45",
+    "severity": "high",
+    "timestamp": "2026-09-10T02:14:33.812Z",
+    "data": {
+      "srcip": "203.0.113.45",
+      "dstip": "10.0.1.20",
+      "dstport": "22",
+      "protocol": "tcp"
+    }
+  },
+  {
+    "id": "wazuh-1748392155.23456",
+    "agent": { "id": "007", "name": "db-server-02" },
+    "manager": { "name": "Wazuh" },
+    "rule": {
+      "id": "31151",
+      "name": "Web attack: SQL Injection",
+      "level": 12,
+      "description": "SQL injection attempt detected in web request."
+    },
+    "title": "Web attack: SQL Injection",
+    "description": "SQL injection attempt in POST /api/users?id=1'+OR+'1'='1 from 198.51.100.22",
+    "severity": "critical",
+    "timestamp": "2026-09-10T02:17:15.001Z",
+    "data": {
+      "srcip": "198.51.100.22",
+      "url": "/api/users",
+      "method": "POST"
+    }
+  },
+  {
+    "id": "wazuh-1748392300.34567",
+    "agent": { "id": "003", "name": "web-server-01" },
+    "manager": { "name": "Wazuh" },
+    "rule": {
+      "id": "2502",
+      "name": "User login success",
+      "level": 3,
+      "description": "User successfully logged in."
+    },
+    "title": "User login success",
+    "description": "User admin successfully logged in via SSH from 10.0.0.5 (internal jump host)",
+    "severity": "low",
+    "timestamp": "2026-09-10T02:19:00.000Z",
+    "data": {
+      "srcip": "10.0.0.5",
+      "dstport": "22",
+      "user": "admin"
+    }
+  },
+  {
+    "id": "wazuh-1748392400.45678",
+    "agent": { "id": "010", "name": "endpoint-HR-05" },
+    "manager": { "name": "Wazuh" },
+    "rule": {
+      "id": "554",
+      "name": "File added to the system",
+      "level": 5,
+      "description": "File added to the system."
+    },
+    "title": "Suspicious file added",
+    "description": "New executable added: C:\\Users\\jsmith\\AppData\\Local\\Temp\\svchost32.exe — not in baseline",
+    "severity": "medium",
+    "timestamp": "2026-09-10T02:21:44.123Z",
+    "data": {
+      "file": "C:\\Users\\jsmith\\AppData\\Local\\Temp\\svchost32.exe",
+      "user": "jsmith",
+      "md5": "d41d8cd98f00b204e9800998ecf8427e"
+    }
+  },
+  {
+    "id": "wazuh-1748392500.56789",
+    "agent": { "id": "003", "name": "web-server-01" },
+    "manager": { "name": "Wazuh" },
+    "rule": {
+      "id": "9700",
+      "name": "Antivirus - No action taken",
+      "level": 2,
+      "description": "Antivirus event: definition update completed."
+    },
+    "title": "Antivirus definition update",
+    "description": "Windows Defender definitions updated to version 1.409.123.0 on web-server-01",
+    "severity": "informational",
+    "timestamp": "2026-09-10T02:22:00.000Z"
+  }
+]

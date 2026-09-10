@@ -1,0 +1,6 @@
+id,title,severity,source,description,timestamp,src_ip,dest_ip,user
+splunk-001,Brute force: multiple failed logins,high,Splunk,50 failed login attempts for user 'administrator' from 203.0.113.99 in 5 minutes,2026-09-10T03:01:00Z,203.0.113.99,10.0.1.5,administrator
+splunk-002,Outbound connection to known C2 IP,critical,Splunk,Endpoint WIN-042 initiated TCP connection to 185.220.101.55 (known Tor exit node) on port 443,2026-09-10T03:05:22Z,10.0.2.42,185.220.101.55,jdoe
+splunk-003,Scheduled task created,medium,Splunk,New scheduled task 'WindowsUpdateHelper' created by non-admin user jsmith pointing to %TEMP%\update.exe,2026-09-10T03:08:11Z,,,jsmith
+splunk-004,Large data transfer to external IP,high,Splunk,560MB transferred from fileserver-01 to external IP 198.51.100.77 over port 443 in 8 minutes,2026-09-10T03:12:44Z,10.0.3.10,198.51.100.77,svc-backup
+splunk-005,Antivirus scan completed,informational,Splunk,Scheduled antivirus scan completed on LAPTOP-HR-09 — no threats found,2026-09-10T03:15:00Z,,,SYSTEM
