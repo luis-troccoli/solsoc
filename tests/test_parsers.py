@@ -1,3 +1,4 @@
+from __future__ import annotations
 import json
 import pytest
 from solsoc.parsers.auto import detect_and_parse

@@ -1,3 +1,4 @@
+from __future__ import annotations
 from solsoc.triage.prompt import SYSTEM_PROMPT, build_user_prompt
 from solsoc.triage.models import Alert
 

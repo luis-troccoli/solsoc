@@ -1,3 +1,4 @@
+from __future__ import annotations
 from solsoc.output.html_output import render_html
 from solsoc.triage.models import TriageReport, TriageResult
 

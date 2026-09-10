@@ -1,3 +1,4 @@
+from __future__ import annotations
 import pytest
 from pydantic import ValidationError
 from solsoc.triage.models import TriageResult, TriageReport, Alert

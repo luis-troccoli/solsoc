@@ -1,3 +1,4 @@
+from __future__ import annotations
 import pytest
 from solsoc.triage.engine import run_triage, _chunks
 from solsoc.triage.models import Alert, TriageResult
