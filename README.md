@@ -2,8 +2,6 @@
   <img src="assets/solsoc-logo.jpg" alt="SolSOC logo"/>
 </p>
 
-<h1 align="center">SolSOC</h1>
-
 <p align="center">
   <strong>AI-powered SOC alert triage. Cut through the noise, surface what matters.</strong>
 </p>
